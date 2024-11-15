@@ -5,6 +5,8 @@ title = '智谱AI java SDK调用（前后端操作）'
 
 +++
 
+初次发布于[我的个人文档](https://colablack.github.io/)
+
 参考:[智谱ai官方文档](https://open.bigmodel.cn/dev/howuse/introduction)
 
 ### 1.安装依赖

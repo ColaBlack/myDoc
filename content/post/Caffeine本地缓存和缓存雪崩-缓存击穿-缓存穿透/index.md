@@ -2,12 +2,13 @@
 date = '2024-10-23T19:43:38+08:00'
 draft = true
 title = 'Caffeine本地缓存和缓存雪崩 缓存击穿 缓存穿透'
+
 +++
 
-# Caffeine本地缓存
+初次发布于[我的个人文档](https://colablack.github.io/)
 
 参考：[缓存雪崩，缓存击穿，缓存穿透](https://blog.csdn.net/weixin_43750212/article/details/143142982)
-           [Caffeine本地缓存](https://juejin.cn/post/7392105060899340299)
+[Caffeine本地缓存](https://juejin.cn/post/7392105060899340299)
 
 在一些场景下可以引入缓存加速，利用redis实现缓存通常是一个不错的选择，但有时为了避免系统变得复杂可以使用本地缓存。
 Caffeine就是一个高效的本地缓存组件。使用方式如下：

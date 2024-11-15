@@ -4,6 +4,8 @@ draft = true
 title = '利用1panel部署前后端分离项目 Java代码打包 前端打包'
 +++
 
+初次发布于[我的个人文档](https://colablack.github.io/)
+
 参考：
 
 1.[1Panel 官方文档](https://1panel.cn/docs/installation/online_installation/)

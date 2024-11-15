@@ -4,6 +4,8 @@ draft = true
 title = 'Phaser开发简单的2d小游戏demo'
 +++
 
+初次发布于[我的个人文档](https://colablack.github.io/)
+
 ### 1.安装
 
 使用如下的命令之一就可以获取工程费的phaser项目。

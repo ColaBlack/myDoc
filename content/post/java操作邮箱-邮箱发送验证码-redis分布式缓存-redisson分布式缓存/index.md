@@ -4,19 +4,19 @@ draft = true
 title = 'Java操作邮箱 邮箱发送验证码 Redis分布式缓存 Redisson分布式缓存'
 +++
 
-java操作邮箱 - 邮箱发送验证码 -redis分布式缓存 -redisson分布式缓存
+初次发布于[我的个人文档](https://colablack.github.io/)
 
 参考:java操作163邮箱
 
 本文以163邮箱为例，介绍如何用java发送邮箱。
 
-1.获取邮箱授权码
+### 1.获取邮箱授权码
 
 进入163邮箱-设置-POP3/SMTP/IMAP-开启POP3/SMTP服务
 
 记录得到的授权码
 
-2.安装依赖
+### 2.安装依赖
 
 ```kotlin
 // https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api
@@ -28,7 +28,7 @@ implementation("org.apache.commons:commons-email:1.6.0")
 
 注意，参考文章年代有些久远，有几个库已经合并更新换了新的名字。
 
-3.编写通用邮件发送工具类
+### 3.编写通用邮件发送工具类
 
 ```java
 package edu.zafu;
@@ -82,7 +82,7 @@ import org.apache.commons.mail.SimpleEmail;
 ```
 
 
-4.调用工具类——以发验证码为例
+### 4.调用工具类——以发验证码为例
 
 编写发送验证码工具类
 
@@ -131,13 +131,13 @@ public class TestMail {
 ```
 
 
-5.引入缓存机制
+### 5.引入缓存机制
 
 上面的验证码用户可以通过疯狂发送请求而恶意消耗邮箱发送资源，我们也没有让验证码及时过期。
 
 可以引入缓存机制解决，在上文Caffeine本地缓存和缓存雪崩，缓存击穿，缓存穿透中我们介绍了如何利用caffeine实现本地缓存，本文就选择用 Redis 实现分布式缓存。
 
-6.安装Redisson
+### 6.安装Redisson
 
 为了在java中操作redis需要安装依赖
 
@@ -146,7 +146,7 @@ public class TestMail {
 implementation("org.redisson:redisson:3.37.0")
 ```
 
-7.调整验证码工具类
+### 7.调整验证码工具类
 
 ```java
 package edu.zafu;

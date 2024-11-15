@@ -4,6 +4,8 @@ draft = true
 title = '响应式原理（简化）'
 +++
 
+初次发布于[我的个人文档](https://colablack.github.io/)
+
 本文简要介绍一下如何实现一个简化版的类vue的响应式。
 
 ### 1.假装不知道响应式

@@ -4,7 +4,7 @@ draft = true
 title = 'Minio对象存储 图片 图片上传 头像'
 +++
 
-# minio对象存储 -图床 -图片上传 -头像
+初次发布于[我的个人文档](https://colablack.github.io/)
 
 参考：
 

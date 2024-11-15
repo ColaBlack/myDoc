@@ -5,6 +5,8 @@ title = '类NoCRUD项目开发手册 模版引擎FreeMarker 命令行制作器Pi
 
 +++
 
+初次发布于[我的个人文档](https://colablack.github.io/)
+
 ### 参考资料
 
 [FreeMarker官方文档（英文）]([Apache FreeMarker Manual](https://freemarker.apache.org/docs/index.html))
