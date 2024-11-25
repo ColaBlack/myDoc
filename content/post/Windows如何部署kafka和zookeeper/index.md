@@ -28,11 +28,11 @@ title = 'Windows如何部署kafka和zookeeper'
 
 这里简单说明一下
 
-> ## Supported releases 支持版本
+>  Supported releases 支持版本
 >
 > 
 >
-> ### 3.9.0
+>  3.9.0
 >
 > - Released November 6, 2024
 >   发布于 2024 年 11 月 6 日
@@ -281,11 +281,11 @@ group.initial.rebalance.delay.ms=0
 
 前往[zookeeper官网](https://zookeeper.apache.org/releases.html)，下载安装包，你划到下面就可以看到
 
-> ## Download
+>  Download
 >
 > Apache ZooKeeper 3.9.3 is our current release, and 3.8.4 our latest stable release.
 >
-> ### Apache ZooKeeper 3.9.3
+>  Apache ZooKeeper 3.9.3
 >
 > [Apache ZooKeeper 3.9.3](https://www.apache.org/dyn/closer.lua/zookeeper/zookeeper-3.9.3/apache-zookeeper-3.9.3-bin.tar.gz)([asc](https://downloads.apache.org/zookeeper/zookeeper-3.9.3/apache-zookeeper-3.9.3-bin.tar.gz.asc), [sha512](https://downloads.apache.org/zookeeper/zookeeper-3.9.3/apache-zookeeper-3.9.3-bin.tar.gz.sha512))
 >
