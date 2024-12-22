@@ -355,7 +355,7 @@ $f(x')-y_1'=\frac{x'-x_1}{x_2-x_1}(y_2'-y_1')$
 
 参考百度百科的图，
 
-![龙格现象](https://bkimg.cdn.bcebos.com/pic/7a899e510fb30f24cbdb82a3cb95d143ac4b03c8?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536)
+![龙格现象](https://27ed0b40.cloudflare-imgbed-bo7.pages.dev/file/1734788555058_image.png)
 
 你会看到，高次插值多项式在两个端点处疯狂震荡，这样反而会导致精度下降。
 
