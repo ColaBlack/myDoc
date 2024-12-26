@@ -308,7 +308,7 @@ summary(res)
 
 这个话题本来不应该出现在这里的，但是这部分实在太短，没地方放。
 
-在R语言中内置了很多相关系数，例如pearson、kendall、spearman相关系数，他们都是用函数`cor(x,y,method = "kendall")`给出的。
+在R语言中内置了很多相关系数，例如pearson、kendall、spearman相关系数（没错，统计学里其实有很多相关系数），他们都是用函数`cor(x,y,method = "kendall")`给出的。
 
 这里x,y是待分析的两组数据，method=后面传的是具体的相关系数的名称。
 

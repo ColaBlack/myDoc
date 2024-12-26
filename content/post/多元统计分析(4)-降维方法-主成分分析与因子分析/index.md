@@ -1,15 +1,17 @@
 +++
 date = '2024-11-27T12:09:07+08:00'
 draft = true
-title = '降维方法 主成分分析和因子分析'
+title = '多元统计分析(4)-降维方法-主成分分析与因子分析'
 
 +++
 
 初次发布于[我的个人文档](https://colablack.github.io)。（每次都是个人文档优先发布哦）
 
-本文简要介绍一下主成分分析和因子分析的原理，但是不涉及具体代码实现。这是因为现在已经有很多现成的软件或库实现了这两个算法，读者只需要一两句简单的命令就可以使用了，所以没有必要在这里讲解。而且你可能会在Python R MATLAB SPSS等多种不同的软件中使用，无论选哪个软件的代码实现都没有特别强的代表性。
+本文简要介绍一下主成分分析和因子分析这两个最常用的降维算法。
 
-### 主成分分析
+大题内容和之前发的主成分分析与因子分析没有区别，只是增加了R语言实现。
+
+### 主成分分析PCA
 
 如果你手上有一组数据，例如是大家的语文数学英语成绩。但是现在有一个问题，咱们的试卷出得有那么一点点不好，大家的成绩都集中在一起了，也就是试卷的区分度不大。现在，我们有没有办法补救呢？
 
@@ -153,6 +155,58 @@ $$z_p=a_{p1}x_1+a_{p2}x_2+...+a_{pp}x_p=a_p^TX$$
 
 这样的话就会损失方差了，也就损失了部分信息。这就是所谓的利用主成分分析进行降维。
 
+##### R语言实现
+
+R语言作为为统计而生的语言，实现主成分分析非常简单。
+
+```R
+# 示例数据
+X <- matrix(c(1, 2, 1, 4, 1, 0, 10, 2, 10, 4, 10, 0), nrow=6, byrow=TRUE)
+
+# 标准化数据
+X_scaled <- scale(X)
+
+# 应用PCA
+pca_result <- prcomp(X_scaled, scale.=FALSE) # scale.=FALSE表示数据已经标准化
+
+# 提取主成分得分
+pca_scores <- pca_result$x
+
+# 主成分的方差贡献率
+pca_variance <- pca_result$sdev^2 / sum(pca_result$sdev^2) * 100
+```
+
+核心就是这里的prcomp函数。
+
+当然，我们已经知道主成分分析的结果是样本协方差矩阵的特征向量特征值。
+
+所以也可以用上面的公式手动求解。
+
+```R
+# 示例数据
+X <- matrix(c(1, 2, 1, 4, 1, 0, 10, 2, 10, 4, 10, 0), nrow=6, byrow=TRUE)
+
+# 计算协方差矩阵
+cov_matrix <- cov(X)
+
+# 计算特征值和特征向量
+eigen_result <- eigen(cov_matrix)
+
+# 排序特征值和特征向量
+sorted_eigen <- eigen_result$vectors[, order(eigen_result$values, decreasing = TRUE)]
+sorted_values <- eigen_result$values[order(eigen_result$values, decreasing = TRUE)]
+
+# 选择主成分（例如，前两个主成分）
+k <- 2
+principal_components <- sorted_eigen[, 1:k]
+
+# 计算主成分得分
+pca_scores <- as.data.frame(t(X %*% principal_components))
+
+# 主成分的方差贡献率
+pca_variance <- sorted_values[1:k] / sum(sorted_values) * 100
+```
+
 ### 因子分析
 
 那么因子分析是什么？
@@ -184,7 +238,7 @@ $Y=AF+\epsilon$
 - $D_F=var(F)=单位阵I_m$
 - $D_\epsilon=var(\epsilon)=diag(\sigma_1^2,\sigma_2^2,...,\sigma_p^2) $
 
-而因子模型最重要的新增是协方差阵的矩阵分解：
+而因子模型最重要的是协方差阵的矩阵分解：
 
 $var(X)=\Sigma=cov(AF+\epsilon,AF+\epsilon)=Acov(F,F)A^{-1}+cov(\epsilon,\epsilon)=AA^{-1}+D_\epsilon$
 
@@ -216,9 +270,36 @@ $\Sigma=AA^{-1}+D_\epsilon$
 
 那么如果我们先估计$D_\epsilon$在分解也可以得到A。
 
-总思路是这样的，不过如果你去翻阅各种资料的话，可能还会遇到约相关阵的说法，
+先把原始变量进行标准化从而$\Sigma=原始变量的相关系数矩阵R$
 
-也就是先把原始变量进行标准化从而$\Sigma=原始变量的相关系数R$再定义$R^*=R-D_\epsilon=AA^{-1}$，
+再定义约相关系数矩阵$R^*=R-D_\epsilon=AA^{-1}$，
 
-然后估计$R^*$再计算A和$D_\epsilon$也是可以的。
+然后估计$R^*$，
+
+再用约相关阵的公式计算A和$D_\epsilon$就可以了。
+
+至于约相关阵怎么估计，有4种方法，但是我个人觉得只有一种方法比较好，然而这种方法的解就是主成分解，所以我个人其实感觉主轴因子法，，，，，，，，没太大意思。
+
+而且由于约相关矩阵是估计来的，你没法保证他的正定性，所以这种方法的解释性也比较差。
+
+##### 因子分析的R语言实现
+
+这个实现也非常简单，并且R语言内置的因子分析可以估计因子得分和进行因子旋转。这两个东西的理论非常复杂，结果也很难看，所以我压根就没提。
+
+```R
+# 输入数据
+data <- matrix(c(一些数据), nrow=3, byrow=TRUE)
+
+# 执行因子分析，factors=2表示提取2个公共因子，rotation表示进行方差最大化因子旋转
+fa_result <- factanal(data, factors=2, rotation="varimax")
+
+# 查看因子载荷矩阵
+fa_result$loadings
+
+# 提取因子得分
+fa_scores <- fa_result$scores
+
+# 可视化
+biplot(fa_result)
+```
 
