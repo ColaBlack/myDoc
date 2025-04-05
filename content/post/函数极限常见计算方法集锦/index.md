@@ -16,49 +16,51 @@ title = '函数极限常见计算方法集锦'
 
 例如出现
 
-![image](https://cdn.nlark.com/yuque/__latex/07c3c9564a753c54f2ab3b66678686cc.svg)
+$ AB+A'B'=AB+AB'-AB'+A'B'=A(B-B')+(A'-A)B' $
 
 而如果出现
 
-![image](https://cdn.nlark.com/yuque/__latex/e21f0414c3c8a5062b70c009e5382719.svg)
+$ A^B+A'^{B'}=A^B+A^{B'}-A^{B'}+A'^{B'}=A^B(1+A^{B'-B})+A'^{B'}(1-(\frac{A}{A'})^{B'}) $
 
 例如：
 
-![image](https://cdn.nlark.com/yuque/__latex/1d8b9133880f51af78bd7dcb96f68ebe.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2} $
 
 注意到分母是幂函数已经比较简单了，所以只需要考虑分子的化简。
 
-而分子刚好是![image](https://cdn.nlark.com/yuque/__latex/754106e416a98a0e35defa9e1c4cd695.svg)型的，所以可以按上面说的方法添项减项。但是你会发现这样做并不容易。
+而分子刚好是$ A^B+A'^{B'}
+ $型的，所以可以按上面说的方法添项减项。但是你会发现这样做并不容易。
 
 所以我们还得再换个思路，因为分子是幂指函数所以可以考虑取e再取对数。
 
 并且我们这样做正好统一了减号前后的结构。因此：
 
-![image](https://cdn.nlark.com/yuque/__latex/99fe984e9c49a74ad92bc69e0e9055ba.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=\lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-e^{\frac{e\ln(1+x)}{x}}}{x^2} $
 
 此处有两种选择，一种是注意到两边的结构被统一了，可以用拉格朗日中值定理。
 
-还有一种选择是注意到，现在的形式和![image](https://cdn.nlark.com/yuque/__latex/754106e416a98a0e35defa9e1c4cd695.svg)型的处理类似，出现了相同的底数，所以可以提一项出去。
+还有一种选择是注意到，现在的形式和$ A^B+A'^{B'}
+ $型的处理类似，出现了相同的底数，所以可以提一项出去。
 
 我们这一节在讲添项减项，因此首选第二个方案。
 
-![image](https://cdn.nlark.com/yuque/__latex/477f1f3c78b32e20c429d7a3b4a04a9b.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=\lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-e^{\frac{e\ln(1+x)}{x}}}{x^2}=\lim_{x\to 0}e^{(1+x)^{\frac{1}{x}}}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2} $
 
 接下来，我们先处理乘积前面的幂指函数。
 
 方法其实已经用过了。
 
-这里我们更聚焦一些，考虑![image](https://cdn.nlark.com/yuque/__latex/11fbbd6703f1fa812f8f78e6b8057c30.svg)，由于e的x次方是连续的因此我们可以交换极限和函数的次序。
+这里我们更聚焦一些，考虑$ \lim_{x\to 0}e^{(1+x)^{\frac{1}{x}}} $，由于e的x次方是连续的因此我们可以交换极限和函数的次序。
 
-![image](https://cdn.nlark.com/yuque/__latex/d668f12c68f9ee1e4859eaffe7d70850.svg)
+$ \lim_{x\to 0}e^{(1+x)^{\frac{1}{x}}}=e^{\lim_{x\to 0}(1+x)^{\frac{1}{x}}} $
 
 接着你会发现极限内又是幂指函数，我们再聚焦一下：
 
-![image](https://cdn.nlark.com/yuque/__latex/db01926875142fb94fcd8b22d86d663a.svg)
+$ \lim_{x\to 0}(1+x)^{\frac{1}{x}} $
 
 ### 利用第一第二重要极限
 
-![image](https://cdn.nlark.com/yuque/__latex/db01926875142fb94fcd8b22d86d663a.svg)
+$ \lim_{x\to 0}(1+x)^{\frac{1}{x}} $
 
 注意到这是第二重要极限，结果为e，那就算完了。
 
@@ -72,7 +74,7 @@ title = '函数极限常见计算方法集锦'
 
 因为这是幂指函数的极限，所以可以取e再取对数。
 
-![image](https://cdn.nlark.com/yuque/__latex/c46a2514c7876fbdd26d8601263b1de5.svg)
+$ \lim_{x\to 0}(1+x)^{\frac{1}{x}}=\lim_{x\to 0}e^{\frac{\ln(1+x)}{x}} $
 
 本质上这只是一个化简技巧而已，所以其他化简技巧也可以使用。
 
@@ -84,19 +86,22 @@ title = '函数极限常见计算方法集锦'
 
 最简单的极限计算方法是利用函数的连续性。
 
-根据函数f(x)在![image](https://cdn.nlark.com/yuque/__latex/e966678757bf1e42157e4502e9d417ee.svg)处连续的定义：
+根据函数f(x)在$ x=x_0 $处连续的定义：
 
-![image](https://cdn.nlark.com/yuque/__latex/81d3d586bcfe40bd564436502932f3dc.svg)
+$ \forall \epsilon > 0,\exists \delta>0,s.t. |x-x_0|<\delta,|f(x)-f(x_0)|<\epsilon
+ $
 
 我们有
 
-![image](https://cdn.nlark.com/yuque/__latex/8e091d968762569fd2531b3bb9b10ebb.svg)
+$ \lim_{x\to x_0} f(x)=f(x_0)
+ $
 
 当其实函数连续不单单意味着以上这一个简简单单的公式。
 
-一般的，如果我们有f(x)和g(x)在![image](https://cdn.nlark.com/yuque/__latex/e966678757bf1e42157e4502e9d417ee.svg)处连续，那么就有
+一般的，如果我们有f(x)和g(x)在$ x=x_0 $处连续，那么就有
 
-![image](https://cdn.nlark.com/yuque/__latex/4e43e40670a784c90716ba1973c27856.svg)
+$ \lim_{x\to x_0} f(g(x))=f(\lim_{x\to x_0}g(x)
+) $
 
 ![](https://cdn.nlark.com/yuque/0/2025/png/48758001/1743835392467-b8bdcc64-51b1-4b46-99db-b984132a6358.png)
 
@@ -104,15 +109,15 @@ title = '函数极限常见计算方法集锦'
 
 这个方法在幂指函数时非常常用。例如，
 
-![image](https://cdn.nlark.com/yuque/__latex/92beb040432392d91d23771532174578.svg)
+$ \lim_{x \to 0} (1+px)^{\frac{1}{x}}=\lim_{x \to 0} [(1+px)^{\frac{p}{x}}]^\frac{1}{p}=[\lim_{x \to 0} (1+px)^{\frac{p}{x}}]^\frac{1}{p}=e^\frac{1}{p} $
 
 接着再交换极限和函数的次序
 
-![image](https://cdn.nlark.com/yuque/__latex/d6d0235983745894230cc5d5c0a7c6a8.svg)
+$ \lim_{x\to 0}(1+x)^{\frac{1}{x}}=\lim_{x\to 0}e^{\frac{\ln(1+x)}{x}}=e^{\lim_{x\to 0}\frac{\ln(1+x)}{x}} $
 
 再次聚焦
 
-![image](https://cdn.nlark.com/yuque/__latex/e4304fa0fe38b9041d1925de73f03f22.svg)
+$ \lim_{x\to 0}\frac{\ln(1+x)}{x} $
 
 这已经可以用等价无穷小替换了，再次我们舍近求远使用洛必达法则。
 
@@ -132,25 +137,25 @@ title = '函数极限常见计算方法集锦'
 
 总之，我们可以用洛必达法则求
 
-![image](https://cdn.nlark.com/yuque/__latex/d28eabc92677a7a1cc780b696c9ba134.svg)
+$ \lim_{x\to 0}\frac{\ln(1+x)}{x}=\lim_{x\to 0}\frac{\frac{1}{1+x}}{1}=1 $
 
 现在再倒回去。
 
-![image](https://cdn.nlark.com/yuque/__latex/d90bdde6091939b5dad9225de2c5b4d4.svg)
+$ \lim_{x\to 0}(1+x)^{\frac{1}{x}}=\lim_{x\to 0}e^{\frac{\ln(1+x)}{x}}=e^{\lim_{x\to 0}\frac{\ln(1+x)}{x}}=e $
 
-![image](https://cdn.nlark.com/yuque/__latex/263bf021cf5d8f315bf7dee3af030083.svg)
+$ \lim_{x\to 0}e^{(1+x)^{\frac{1}{x}}}=e^{\lim_{x\to 0}(1+x)^{\frac{1}{x}}}=e^e $
 
 ### 利用极限的四则运算法则
 
 接着再倒回去我们到了
 
-![image](https://cdn.nlark.com/yuque/__latex/477f1f3c78b32e20c429d7a3b4a04a9b.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=\lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-e^{\frac{e\ln(1+x)}{x}}}{x^2}=\lim_{x\to 0}e^{(1+x)^{\frac{1}{x}}}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2} $
 
 注意到乘号左边的极限已经求出来了，是非0常数，因此可以提前算出来。
 
 所以
 
-![image](https://cdn.nlark.com/yuque/__latex/bca92a65bac2f76f74a0396330816790.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=\lim_{x\to 0}e^{(1+x)^{\frac{1}{x}}}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2}=e^e\lim_{x\to 0}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2} $
 
 ### 利用等价无穷小
 
@@ -160,25 +165,30 @@ title = '函数极限常见计算方法集锦'
 
 (以下都是x趋于0时的）
 
-> ![image](https://cdn.nlark.com/yuque/__latex/a43b36eb3a7e173b4ef326729bae2608.svg)
+> $ x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \sim e^x-1 \sim \ln(x+\sqrt{1+x^2})
+>  $
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/78fe8053d852e82b70c4d2d563444429.svg)(注意小心根号！)
+> $ (1+x)^\alpha \sim 1+\alpha x $(注意小心根号！)
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/208defe106acc65ce077c6901cad9aa7.svg)
+> $ 1-\cos x \sim \frac{x^2}{2} $
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/f13e5d22e49c8941338db7e9097ddffa.svg)这个是最常见的逆用等价无穷小的情况！！！
+> $ x-1 \sim \ln x
+
+ $这个是最常见的逆用等价无穷小的情况！！！
+
+>
 
 注意等价无穷小的逆用，例如
 
 我们有：
 
-![image](https://cdn.nlark.com/yuque/__latex/1fe01656a6ec28de07dda89d4b9bccbc.svg)
+$ 1-\cos^p x \sim -\ln \cos^p x=-p\ln \cos x\sim-p(\cos x -1)=p(1-\cos x)\sim\frac{px^2}{2} $
 
 在这里我们使用
 
-![image](https://cdn.nlark.com/yuque/__latex/4791feae87d5ef0c1977816962573505.svg)
+$ e^x-1 \sim x $
 
-![image](https://cdn.nlark.com/yuque/__latex/5c5c94a74071c642b4509cc9669097eb.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=e^e\lim_{x\to 0}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2}=e^e\lim_{x\to 0}\frac{(1+x)^{\frac{1}{x}}-\frac{e\ln(1+x)}{x}}{x^2} $
 
 ### 利用泰勒公式
 
@@ -188,43 +198,47 @@ title = '函数极限常见计算方法集锦'
 
 在此给出常用的麦克劳林展开式。
 
-> ![image](https://cdn.nlark.com/yuque/__latex/677d8b22f027fe5e9ab82c59166d0b90.svg) 不交错的n的阶乘分之x的n次方型
+> $ e^x=1+x+\frac{x^2}{2!}+...+\frac{x^n}{n!}+o(x^{n}) $ 不交错的n的阶乘分之x的n次方型
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/9b8bdc46f5c5d3815a29e586636bfd36.svg) 交错的奇数的阶乘分之x的奇数次方型
+> $ \sin x=x-\frac{x^3}{3!}+\frac{x^5}{5!}+(-1)^n\frac{x^{2n+1}}{(2n+1)!}+o(x^{2n+2})
+>  $ 交错的奇数的阶乘分之x的奇数次方型
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/be130ca366b8d2fa13328ccda483fb70.svg) 不交错的奇数的阶乘分之x的奇数次方型
+> $ \sinh x=\frac{e^x-e^{-x}}{2}=x+\frac{x^3}{3!}+...+\frac{x^{2n+1}}{(2n+1)!}+o(x^{2n+2}) $ 不交错的奇数的阶乘分之x的奇数次方型
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/2137b204d49003e098aa66cbfddaec14.svg) 交错的奇数的阶乘分之x的奇数次方型
+> $ \cosh x=\frac{e^x+e^{-x}}{2}=1+\frac{x^2}{2!}+...+\frac{x^{2n}}{(2n)!}+o(x^{2n+1}) $ 交错的奇数的阶乘分之x的奇数次方型
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/6c4434eedcf50a97c9ff96f85f427d87.svg)不交错的偶数的阶乘分之x的偶数次方型
+> $ \cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}+(-1)^n\frac{x^{2n}}{(2n)!}+o(x^{2n+1})
+>  $不交错的偶数的阶乘分之x的偶数次方型
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/f11f22bea1e8c2cab488fa4b1023642c.svg)不交错的等比数列型
+> $ \frac{1}{1-x}=1+x+x^2+...+x^n+o(x^{n}) $不交错的等比数列型
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/f6c4a0316e20b6b7f42be95ae59c9f61.svg)交错的等比数列型
+> $ \frac{1}{1+x}=1-x+x^2+...+(-x)^n+o(x^{n}) $交错的等比数列型
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/cc736c1e0d912a0cf6f1ff6c0559a466.svg)交错的n分之x的n次方型
+> $ \ln (1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+...+(-1)^{n-1}\frac{x^n}{n}+o(x^{n}) $交错的n分之x的n次方型
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/38408105a75f2089370b5d825b4f69ac.svg)不交错的n分之x的n次方型
+> $ -\ln (1-x)=x+\frac{x^2}{2}+\frac{x^3}{3}+...+\frac{x^n}{n}+o(x^{n}) $不交错的n分之x的n次方型
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/c9315bd34cc93f43f504f305e5df917a.svg)不交错的奇数分之x的奇数次方型
+> $ arctanh (x)=\frac{1}{2}\ln \frac{1+x}{1-x}=x+\frac{x^3}{3}+\frac{x^5}{5}+...+\frac{x^{2n+1}}{2n+1}+o(x^{2n+2}) $不交错的奇数分之x的奇数次方型
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/8823084f52549a6c0a2093282a249a01.svg)不交错的奇数分之x的奇数次方型
+> $ \arctan x=x-\frac{x^3}{3}+\frac{x^5}{5}+...+(-1)^n\frac{x^{2n+1}}{2n+1}+o(x^{2n+2}) $不交错的奇数分之x的奇数次方型
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/109d924a48dd4167d3cbf41944650906.svg)当指数![image](https://cdn.nlark.com/yuque/__latex/b0364cde3cf7f2510337cce660a48c5f.svg)是正整数的时候，该公式退化为二项式展开。特别注意![image](https://cdn.nlark.com/yuque/__latex/b0364cde3cf7f2510337cce660a48c5f.svg)是0.5，也就是![image](https://cdn.nlark.com/yuque/__latex/7620d5635b9919dc85f05e459c182277.svg)的情形！
+> $ (1+x)^\alpha=1+\alpha x+\frac{\alpha (\alpha-1)}{2!}x^2+...+\frac{\alpha(\alpha-1)(\alpha-2)...(\alpha-n+1)}{n!}x^n+o(x^n) $当指数$ \alpha
+>  $是正整数的时候，该公式退化为二项式展开。特别注意$ \alpha
+>  $是0.5，也就是$ \sqrt{1+x} $的情形！
 >
 > 我没有给出通项公式型：
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/f63fdb8d4d18e538daf877c90e243f17.svg)
+> $ \tan x=x+\frac{x^3}{3}+o(x^4) $
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/eddf337304577e07f3dc7c52ed6fcfae.svg)
+> $ \arcsin x=x+\frac{x^3}{6}+o(x^4) $
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/64bc0ce795067ef4419f6d7e12306361.svg)
+> $ arcsinh(x)=\ln(x+\sqrt{1+x^2})=x-\frac{x^3}{6}+o(x^4) $
 >
-> ![image](https://cdn.nlark.com/yuque/__latex/483f9ccb410143fafe795a069798c601.svg)
+> $ (1+x)^\frac{1}{x}=e(1-\frac{1}{2}x+\frac{11}{24}x^2)+o(x^2) $
 
 这里，注意到本题涉及的函数的泰勒展开已在上文给出，所以直接使用即可。
 
-![image](https://cdn.nlark.com/yuque/__latex/4f21a8fc18550abb9882b42ab1c4b05d.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=e^e\lim_{x\to 0}\frac{(1+x)^{\frac{1}{x}}-\frac{e\ln(1+x)}{x}}{x^2}=e^e\lim_{x\to 0}\frac{e(1-\frac{1}{2}x+\frac{11}{24}x^2)-\frac{e(x-\frac{x^2}{2}+\frac{x^3}{3})}{x}+o(x^2)}{x^2}=\frac{1}{8}e^{e+1} $
 
 终于算出来了！！！
 
@@ -238,55 +252,55 @@ title = '函数极限常见计算方法集锦'
 
 前面是一样的，利用幂指函数的技巧，然后再利用同底指数的技巧。
 
-![image](https://cdn.nlark.com/yuque/__latex/477f1f3c78b32e20c429d7a3b4a04a9b.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=\lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-e^{\frac{e\ln(1+x)}{x}}}{x^2}=\lim_{x\to 0}e^{(1+x)^{\frac{1}{x}}}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2} $
 
 然后利用第二重要极限，得到乘积前面的结果可以提出。
 
-![image](https://cdn.nlark.com/yuque/__latex/e4743bb32d37b6d81cd0244b1e9b5b73.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=\lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-e^{\frac{e\ln(1+x)}{x}}}{x^2}=\lim_{x\to 0}e^{(1+x)^{\frac{1}{x}}}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2}=e^e\lim_{x\to 0}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2} $
 
 然后和前面一样，利用等价无穷小替换。
 
-![image](https://cdn.nlark.com/yuque/__latex/1c94ce0ecb6219637dfcbcc4449040c7.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=\lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-e^{\frac{e\ln(1+x)}{x}}}{x^2}=\lim_{x\to 0}e^{(1+x)^{\frac{1}{x}}}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2}=e^e\lim_{x\to 0}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2}=e^e\lim_{x\to 0}\frac{(1+x)^{\frac{1}{x}}-\frac{e\ln(1+x)}{x}}{x^2} $
 
 接着注意到减号前面还是一个幂指函数，再次利用幂指函数技巧。
 
-![image](https://cdn.nlark.com/yuque/__latex/20cefc9d28d9d9c4088f81cb94f3c282.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=\lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-e^{\frac{e\ln(1+x)}{x}}}{x^2}=\lim_{x\to 0}e^{(1+x)^{\frac{1}{x}}}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2}=e^e\lim_{x\to 0}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2}=e^e\lim_{x\to 0}\frac{(1+x)^{\frac{1}{x}}-\frac{e\ln(1+x)}{x}}{x^2}=e^e\lim_{x\to 0}\frac{e^{\frac{\ln(1+x)}{x}}-e\frac{\ln(1+x)}{x}}{x^2} $
 
-根据![image](https://cdn.nlark.com/yuque/__latex/c868f28fe6b6e9e4634483eb0a778155.svg)我们知道e指数上是趋于1的而不是趋于0。
+根据$ \ln(1+x)\sim x $我们知道e指数上是趋于1的而不是趋于0。
 
 然后我们利用泰勒展开构造等价无穷小。
 
-由于![image](https://cdn.nlark.com/yuque/__latex/677d8b22f027fe5e9ab82c59166d0b90.svg)
+由于$ e^x=1+x+\frac{x^2}{2!}+...+\frac{x^n}{n!}+o(x^{n}) $
 
-故![image](https://cdn.nlark.com/yuque/__latex/388c7d0007eb44ca712d9bd1c8573852.svg)
+故$ e^{x-1}=x+\frac{(x-1)^2}{2!}+...+\frac{(x-1)^n}{n!}+o((x-1)^{n}) $
 
-于是![image](https://cdn.nlark.com/yuque/__latex/3e44702fc7afac3e2842d07c741cad8c.svg)
+于是$ e^{x}=ex+e\frac{(x-1)^2}{2!}+...+e\frac{(x-1)^n}{n!}+o((x-1)^{n}) $
 
 从而
 
-![image](https://cdn.nlark.com/yuque/__latex/5ffe761af6ff2442cc961cdb263c2a15.svg)
+$ e^x-ex \sim e\frac{(x-1)^2}{2!} $
 
 注意到，分子现在就是这个类型的等价无穷小，进行替换。
 
-![image](https://cdn.nlark.com/yuque/__latex/c48ab2881893df26fbe7e01883dc4ac1.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=\lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-e^{\frac{e\ln(1+x)}{x}}}{x^2}=\lim_{x\to 0}e^{(1+x)^{\frac{1}{x}}}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2}=e^e\lim_{x\to 0}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2}=e^e\lim_{x\to 0}\frac{(1+x)^{\frac{1}{x}}-\frac{e\ln(1+x)}{x}}{x^2}=e^e\lim_{x\to 0}\frac{e^{\frac{\ln(1+x)}{x}}-e\frac{\ln(1+x)}{x}}{x^2}=e^e\lim_{x\to 0}\frac{(1+x)^{\frac{1}{x}}-\frac{e\ln(1+x)}{x}}{x^2}=\frac{e^{e+1}}{2}\lim_{x\to 0}\frac{(\frac{\ln(1+x)}{x}-1)^2}{x^2}=\frac{e^{e+1}}{2}\lim_{x\to 0}\frac{(\ln(1+x)-x)^2}{x^4} $
 
-而我们有![image](https://cdn.nlark.com/yuque/__latex/cc736c1e0d912a0cf6f1ff6c0559a466.svg)
+而我们有$ \ln (1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+...+(-1)^{n-1}\frac{x^n}{n}+o(x^{n}) $
 
-所以就有![image](https://cdn.nlark.com/yuque/__latex/1c6b83aa90cd59b6b3edbf45716b0418.svg)，从而
+所以就有$ \ln(1+x)-x \sim - \frac{x^2}{2} $，从而
 
-![image](https://cdn.nlark.com/yuque/__latex/4e5a7c85b8e86d9ddf6035f9863f9d79.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=\lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-e^{\frac{e\ln(1+x)}{x}}}{x^2}=\lim_{x\to 0}e^{(1+x)^{\frac{1}{x}}}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2}=e^e\lim_{x\to 0}\frac{1-e^{\frac{e\ln(1+x)}{x}-(1+x)^{\frac{1}{x}}}}{x^2}=e^e\lim_{x\to 0}\frac{(1+x)^{\frac{1}{x}}-\frac{e\ln(1+x)}{x}}{x^2}=e^e\lim_{x\to 0}\frac{e^{\frac{\ln(1+x)}{x}}-e\frac{\ln(1+x)}{x}}{x^2}=e^e\lim_{x\to 0}\frac{(1+x)^{\frac{1}{x}}-\frac{e\ln(1+x)}{x}}{x^2}=\frac{e^{e+1}}{2}\lim_{x\to 0}\frac{(\frac{\ln(1+x)}{x}-1)^2}{x^2}=\frac{e^{e+1}}{2}\lim_{x\to 0}\frac{(\ln(1+x)-x)^2}{x^4}=\frac{e^{e+1}}{2}\lim_{x\to 0}\frac{x^4}{4x^4}=\frac{e^{e+1}}{8} $
 
 ### 利用拉格朗日中值定理
 
 前面我们说到这题还可以用拉格朗日中值定理，现在我们尝试一下。
 
-![image](https://cdn.nlark.com/yuque/__latex/130f9de657d4a11e3fd3b79b7267415a.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=\lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-e^{\frac{e\ln(1+x)}{x}}}{x^2}=\lim_{x\to 0}\frac{e^\theta((1+x)^{\frac{1}{x}}-\frac{e\ln(1+x)}{x})}{x^2} $
 
-其中,![image](https://cdn.nlark.com/yuque/__latex/025c9eeede7dedd813a953bd3aca40ec.svg)
+其中,$ \theta 介于(1+x)^{\frac{1}{x}},\frac{e\ln(1+x)}{x}之间 $
 
-而当x趋于0时，两边都趋于e（理由前面已给出），因此![image](https://cdn.nlark.com/yuque/__latex/ed5a4aa5e092e303a69c608582c70db9.svg)也趋于e，从而
+而当x趋于0时，两边都趋于e（理由前面已给出），因此$ \theta $也趋于e，从而
 
-![image](https://cdn.nlark.com/yuque/__latex/b8ebc7964b2d02cfd38ec2fe03432538.svg)
+$ \lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-(1+x)^{\frac{e}{x}}}{x^2}=\lim_{x\to 0}\frac{e^{(1+x)^{\frac{1}{x}}}-e^{\frac{e\ln(1+x)}{x}}}{x^2}=\lim_{x\to 0}\frac{e^\theta((1+x)^{\frac{1}{x}}-\frac{e\ln(1+x)}{x})}{x^2}=e^e\lim_{x\to 0}\frac{(1+x)^{\frac{1}{x}}-\frac{e\ln(1+x)}{x}}{x^2} $
 
 极限号里面的极限前文已给出两种计算方法。
 
@@ -298,17 +312,17 @@ title = '函数极限常见计算方法集锦'
 
 例如，
 
-![image](https://cdn.nlark.com/yuque/__latex/1d2dd18be0f4a02cdbf769e13864e8b0.svg)
+$ \lim_{x\to +\infty} x(\frac{\pi}{4}-\arctan \frac{x}{1+x}) $
 
 首先，应该统一结构。
 
-![image](https://cdn.nlark.com/yuque/__latex/349cb215e91c1f939867b2b50243c9ff.svg)
+$ \lim_{x\to +\infty} x(\frac{\pi}{4}-\arctan \frac{x}{1+x})=\lim_{x\to +\infty} x(\arctan 1-\arctan \frac{x}{1+x}) $
 
 然后仍然可以使用拉格朗日中值定理，但在此我们介绍倒代换的方法。
 
-令![image](https://cdn.nlark.com/yuque/__latex/e503baa0ff638efb276aef1f28cc4459.svg)
+令$ t=\frac{1}{x} $
 
-![image](https://cdn.nlark.com/yuque/__latex/4b12feb2ea17e27f773e54ef845f23db.svg)
+$ \lim_{x\to +\infty} x(\frac{\pi}{4}-\arctan \frac{x}{1+x})=\lim_{x\to +\infty} x(\arctan 1-\arctan \frac{x}{1+x})=\lim_{t\to0^+}\frac{\arctan 1-\arctan \frac{1}{1+t}}{t} $
 
 然后再使用拉格朗日中值定理或者洛必达法则即可得到答案0.5。
 
@@ -318,7 +332,86 @@ title = '函数极限常见计算方法集锦'
 
 例如，
 
-设y由![image](https://cdn.nlark.com/yuque/__latex/5a052becae04022771c21aff37bd5cb4.svg)确定，求![image](https://cdn.nlark.com/yuque/__latex/f4637ea04b8ce369177b7024d53b082c.svg)
+设y由$ x^3+y^3+xy=1 $确定，求$ \lim_{x\to 0}\frac{3y+x^2+x-3}{x^2} $
 
-只需要按照隐函数求导法则求出y的1和2阶导数，分别为![image](https://cdn.nlark.com/yuque/__latex/74fae690d0bf7bdbcc868fe88069c53b.svg)再用泰勒展开求解即可，答案刚好是1。
+只需要按照隐函数求导法则求出y的1和2阶导数，分别为$ -\frac{1}{3},0 $再用泰勒展开求解即可，答案刚好是1。
+
+本来都完成了，我也都发布了。结果刚发布就看到新的计算方法了。
+
+### 主动计算等价无穷小进行替换
+
+直接上例题，已知f(x)可导,f(0)=0,f'(0)不为0。求
+
+$ \lim_{x\to0}\frac{\tan 2x \int_{0}^{x}tf(x-t)dt}{\int_0^xtf(x^2-t^2)dt} $
+
+首先，注意到这是一个含变限积分的极限题，最常规的思路是通过洛必达法则消掉变限积分的变限。
+
+但是这题分母可以用这个方法，分子就比较痛苦了。
+
+分子上$ \tan 2x
+ $可以等价为2x，但是这就变成了x乘以变限积分。
+
+此时求一次导不能解决变限积分。
+
+但是这其实不是最糟糕的。更糟糕的是，如果我们想给变限积分求导，那么被积函数里也不能有x，因此我们需要对积分号进行化简。(事实上，任何时候也都应该考虑给变限积分化简）
+
+分子的化简非常简单，利用区间再现公式即可。
+
+$ \int_0^xtf(x-t)dx=\int_0^x(x-t)f(t)dx=x\int_0^xf(t)dt-\int_0^xtf(t)dt $
+
+分母则需要凑微分。
+
+$ \int_0^xtf(x^2-t^2)dt=\frac{1}{2}\int_0^xf(x^2-t^2)dt^2=-\frac{1}{2}\int_0^xf(x^2-t^2)d(-t^2)=-\frac{1}{2}\int_0^xf(x^2-t^2)d(x-t^2)=-\frac{1}{2}\int_{x^2}^0f(u)du=\frac{1}{2}\int_0^{x^2}f(t)dt
+ $因此
+
+$ \lim_{x\to0}\frac{\tan 2x \int_{0}^{x}tf(x-t)dt}{\int_0^xtf(x^2-t^2)dt}=4\lim_{x\to0}\frac{x(x\int_0^xf(t)dt-\int_0^xtf(t)dt)}{\int_0^{x^2}f(t)dt} $
+
+显然，情况比我们一开始预想得还要糟糕。（但是这题仍然可以用洛必达来做，之后你就会看到）
+
+这时就可以尝试着主动计算分子或分母的等价无穷小，进行等价无穷小替换。
+
+显然，分母比较简单，我们来尝试看看。
+
+设分母是x的n次方阶的，那么只需计算
+
+$ \lim_{x\to0}\frac{\int_0^{x^2}f(t)dt}{x^k}=\lim_{x\to0}\frac{2xf(x^2)}{kx^{k-1}}=\frac{2}{k}\lim_{x\to0}\frac{f(x^2)}{x^{k-2}}
+ $
+
+很简单，就是一次洛必达而已。
+
+### 利用导数定义计算极限
+
+注意到，这个形式和导数的定义相似。
+
+如果k-2=2即k=4的话，就有
+
+$ \lim_{x\to0}\frac{\int_0^{x^2}f(t)dt}{x^4}=\lim_{x\to0}\frac{2xf(x^2)}{4x^{4-1}}=\frac{1}{2}\lim_{x\to0}\frac{f(x^2)}{x^{2}}=\frac{1}{2}\lim_{x\to0}\frac{f(x^2)-f(0)}{x^{2}-0}=\frac{1}{2}f'(0) $
+
+因此，$ \lim_{x\to0}\frac{\int_0^{x^2}f(t)dt}{\frac{x^4f'(0)}{2}}=1$
+
+所以，$ \int_0^{x^2}f(t)dt \sim \frac{x^4f'(0)}{2} $
+
+从而，
+
+$ \lim_{x\to0}\frac{\tan 2x \int_{0}^{x}tf(x-t)dt}{\int_0^xtf(x^2-t^2)dt}=4\lim_{x\to0}\frac{x(x\int_0^xf(t)dt-\int_0^xtf(t)dt)}{\int_0^{x^2}f(t)dt}=4\lim_{x\to0}\frac{x(x\int_0^xf(t)dt-\int_0^xtf(t)dt)}{\frac{x^4f'(0)}{2}}=8\lim_{x\to0}\frac{x\int_0^xf(t)dt-\int_0^xtf(t)dt}{x^3f'(0)} $
+
+接下来，似乎就没有什么办法了。
+
+我们只能开洛了，所以其实前面就是用了一个技巧化简分母而已。
+
+我们最终的做法和洛必达没有什么本质区别。
+
+$ \lim_{x\to0}\frac{\tan 2x \int_{0}^{x}tf(x-t)dt}{\int_0^xtf(x^2-t^2)dt}=8\lim_{x\to0}\frac{x\int_0^xf(t)dt-\int_0^xtf(t)dt}{x^3f'(0)}=8\lim_{x\to0}\frac{\int_0^xf(t)dt}{3x^2f'(0)} $
+
+然后继续洛必达。
+
+$ \lim_{x\to0}\frac{\tan 2x \int_{0}^{x}tf(x-t)dt}{\int_0^xtf(x^2-t^2)dt}=8\lim_{x\to0}\frac{\int_0^xf(t)dt}{3x^2f'(0)}=\frac{4}{3f'(0)}\lim_{x\to0}\frac{f(x)}{x} $
+
+这下你应该知道后面的极限怎么处理了。
+
+$ \lim_{x\to0}\frac{\tan 2x \int_{0}^{x}tf(x-t)dt}{\int_0^xtf(x^2-t^2)dt}=\frac{4}{3f'(0)}\lim_{x\to0}\frac{f(x)-0}{x-0}=\frac{4}{3f'(0)}f'(0)=\frac{4}{3} $
+
+很遗憾，最后我们的做法对比直接洛必达并没有什么本质上的变化，但是我觉得这样写确实过程上更清爽了。
+
+而且有一个更重要的问题，就是我们这里是需要反复陪凑导数定义的，如果你不使用这个方法 而直接洛必达，我想几乎很少有人能想到配凑导数定义了。所以这个方法确实带来了思想上的简化。
 
